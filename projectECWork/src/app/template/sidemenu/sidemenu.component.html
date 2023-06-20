@@ -1,0 +1,4 @@
+<h1>{{usertype}}</h1>
+<div *ngFor="let role of userRoles[0][usertype]">
+<button  class="m-1 btn btn-success" (click)="navigateTo(role.path)">{{role.label}}</button>
+</div>

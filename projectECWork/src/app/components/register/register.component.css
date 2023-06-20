@@ -1,0 +1,29 @@
+/* Full-width inputs */
+input[type=text], input[type=password] {
+    width: 40%;
+    padding: 12px 20px;
+    margin: 6px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+  }
+
+  form {
+    background-color: #bde7be;
+    border: 3px solid #f1f1f1;
+    width: 40%;
+  }
+  /* Add padding to containers */
+.container {
+    padding: 16px;
+  }
+
+  button {   
+    background-color: #e9f0e9;   
+    width: 30%;  
+     color:black;   
+     padding: 15px;   
+     margin: 10px 0px;   
+     border: none;   
+     cursor: pointer;   
+      }   

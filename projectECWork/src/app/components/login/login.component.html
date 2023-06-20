@@ -1,0 +1,19 @@
+<p>login works!</p>
+<html>
+<body>    
+     
+    <form [formGroup]="loginForm" (ngSubmit)="onLogin()">  
+        <div class="container">   
+            <label>Username : </label>   
+            <input type="text" formControlName="username" class="form-control" /><br><br><br>
+            <label>Password : </label>   
+            <input type="text" formControlName="password" class="form-control" /><br><br><br>  
+            <button type="submit">Login</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button type="button"(click)="toRegister()">SignUp</button> <br>
+            <input type="checkbox" checked="checked"> Remember me&nbsp;&nbsp;&nbsp;  
+              
+            Forgot <a href="#"> password? </a>   
+        </div>   
+    </form>     
+</body>     
+</html>  
