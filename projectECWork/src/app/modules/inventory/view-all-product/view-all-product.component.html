@@ -1,2 +1,47 @@
-<p>view-all-product works!</p>
-<h1>Testing Inventory</h1>
+
+
+
+<table class="table table-bordered">
+  <div *ngFor="let p of pList">
+      <thead>
+ 
+            <th scope="col">productId</th>
+          <th scope="col">productName</th>
+          <th scope="col">productCategory</th>
+          
+          <th scope="col">productPrice</th>
+          <th scope="col">productAvailableCount</th>
+
+          <th>dealerId</th>
+          <th>dealerName</th>
+          <th>dealerEmail</th>
+          <th>dealerMobileNumber</th>
+             
+       </thead>
+       
+      <tbody>
+        <tr *ngFor="let ad of p.availableDealer">
+          <td>{{p.productId}}</td>
+          <td>{{p.productName}}</td>
+          <td>{{p.productCategory}}</td>
+        <td>{{p.productPrice}}</td>
+        <td>{{p.productAvailableCount}}</td>
+      
+        
+          <td>{{ad.dealerId}}</td>
+          <td>{{ad.dealerName}}</td>
+          <td>{{ad.dealerEmail}}</td>
+          <td>{{ad.dealerMobileNumber}}</td>
+          
+          <td><button type="button" [routerLink]="['update',p.productId,ad.dealerId]" class="btn btn-success">Update</button></td>
+       
+        
+        
+        
+        </tr>
+      
+    </tbody>
+     
+  </div>
+</table>
+    <router-outlet></router-outlet>

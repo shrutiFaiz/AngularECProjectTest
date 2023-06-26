@@ -1,1 +1,152 @@
-<p>add-product works!</p>
+
+
+
+<section class="vh-100" style="background-color: #eee;">
+    <div class="container h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-lg-12 col-xl-11">
+          <div class="card text-black" style="border-radius: 25px;">
+            <div class="card-body p-md-5">
+              <div class="row justify-content-center">
+                <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
+  
+                  <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">New Product Form</p>
+  
+                  <form [formGroup]="regForm" (ngSubmit)="saveData()" class="mx-1 mx-md-4">
+  
+                    <div class="d-flex flex-row align-items-center mb-4">
+                      <i class="fas fa-user fa-lg me-3 fa-fw"></i>
+                      <div class="form-outline flex-fill mb-0">
+                        <input type="text" formControlName="productName" class="form-control" />
+                        <label class="form-label" for="form3Example1c">Product Name</label>
+                      </div>
+                    </div>
+
+                    <div class="d-flex flex-row align-items-center mb-4">
+                        <i class="fas fa-user fa-lg me-3 fa-fw"></i>
+                        <div class="form-outline flex-fill mb-0">
+                          <input type="text" formControlName="productCategory" class="form-control" />
+                          <label class="form-label" for="form3Example1c">Product Category</label>
+                        </div>
+                      </div>
+  
+                    <div class="d-flex flex-row align-items-center mb-4">
+                      <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
+                      <div class="form-outline flex-fill mb-0">
+                        <input type="number" formControlName="productPrice" class="form-control" />
+                        <label class="form-label" for="form3Example3c">Product Price</label>
+                      </div>
+                    </div>
+
+                    <div class="d-flex flex-row align-items-center mb-4">
+                      <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
+                      <div class="form-outline flex-fill mb-0">
+                        <input type="number" formControlName="productAvailableCount" class="form-control" />
+                        <label class="form-label" for="form3Example3c">productAvailableCount</label>
+                      </div>
+                    </div>
+  
+                    
+                    
+                    <!--  Select drop down-->
+
+                    <div class="d-flex flex-row align-items-center mb-4">
+                      <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
+                      <div class="form-outline flex-fill mb-0">
+                        <label for="dealer">Choose a Dealer: </label>&nbsp;&nbsp;&nbsp;&nbsp;
+                        <select formArrayName="availableDealer" (change)="addDealerUI($event)" class="form-control">
+                          <option>Select Dealer</option>
+                          <option *ngFor="let dl of dealerList" [value]="dl.dealerId">
+                                  {{dl.dealerName}}
+                            </option>
+
+                        </select>
+                      </div>
+                    </div>
+
+                    <!-- XXXXXXXXXXXXXXXXX -->
+
+                    <!--  Upload Photo  -->
+
+                    <div class="form-row"> 
+                            
+                      <label for="productPhoto">Photo For Product</label>
+                      <input type="file" class="form-control-file" (change)="onchangePhoto($event)">
+                      <img [src]="imageSrc" height="50">
+                                 
+              </div> <br>
+
+                    <!-- Upload photo end-->
+
+                    <!--  PRODUCT Details  -->
+
+                      <!--  FormGroupName = productDetails -->
+
+                      <label class="form-label" for="form3Example4cd"><b>PRODUCT DETAILS</b></label>
+                    <div formGroupName='productDetails'class="d-flex flex-row align-items-center mb-4">
+                      <i class="fas fa-key fa-lg me-3 fa-fw"></i>
+                      <!--<div class="form-outline flex-fill mb-0">
+                        <input type="number" formControlName="productDetailsId" class="form-control" />
+                        <label class="form-label" for="form3Example4cd">productDetailsId</label>
+                      </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-->
+
+                      <div class="form-outline flex-fill mb-0">
+                        <input type="text" formControlName="manufacturerName" class="form-control" />
+                        <label class="form-label" for="form3Example4cd">manufacturerName</label>
+                      </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+                      <div class="form-outline flex-fill mb-0">
+                        <input type="number" formControlName="modelNumber" class="form-control" />
+                        <label class="form-label" for="form3Example4cd">modelNumber</label>
+                      </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        
+                         <!--  Product Features  -->
+                        <br><br>
+                         <form formArrayName="productfeatures" *ngFor="let f of productfeatures.controls; index as i;">   
+                          
+                          <label class="form-label" for="form3Example4cd"><b>Product Features</b></label>
+                          <div [formGroupName]='i'class="d-flex flex-row align-items-center mb-4">
+                            <i class="fas fa-key fa-lg me-3 fa-fw"></i>
+                            <!--<div class="form-outline flex-fill mb-0">
+                              <br><input type="number" formControlName="featureId" class="form-control" />
+                              <label class="form-label" for="form3Example4cd">featureId</label>
+                            </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-->
+      
+                            <div class="form-outline flex-fill mb-0">
+                              <input type="text" formControlName="featureName" class="form-control" />
+                              <label class="form-label" for="form3Example4cd">featureName</label>
+                            </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      
+                            <div class="form-outline flex-fill mb-0">
+                              <input type="text" formControlName="featureValue" class="form-control" />
+                              <label class="form-label" for="form3Example4cd">featureValue</label>
+                            </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                  
+                          </div>
+                        </form>
+
+                         <!--  End Of Product Features  -->
+                      
+                    </div>
+
+                      <!--  END OF FormGroupName = productDetails -->
+
+
+                    <!--  END PRODUCT Details  -->
+                       
+                    <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
+                      <button type="submit" class="btn btn-primary btn-lg">SAVE</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    </div>
+                    
+  
+                  </form><!--  End FORM  -->
+  
+                </div>
+                
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>

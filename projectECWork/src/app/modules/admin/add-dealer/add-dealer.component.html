@@ -1,1 +1,119 @@
-<p>add-dealer works!</p>
+
+<section class="vh-100 bg-image"
+style="background-image: url('https://mdbcdn.b-cdn.net/img/Photos/new-templates/search-box/img4.webp');">
+<div class="mask d-flex align-items-center h-100 gradient-custom-3">
+  <div class="container h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+        <div class="card" style="border-radius: 15px;">
+          <div class="card-body p-5">
+            <form [formGroup]="register" (ngSubmit)="saveDealer()">
+              <div *ngIf="currentStep===1">
+              <h3 class="fw-normal mb-5" style="color: #1bb6ea;">Register Product Here</h3>
+
+
+              <div class="form-outline mb-4">
+                  <label class="form-label" for="form3Example3cg">Dealer Name</label>
+                <input type="text" formControlName="dealerName" class="form-control form-control-lg" />
+                
+              </div>
+              <div class="form-outline mb-4">
+                <label class="form-label" for="form3Example1cg">Dealer Email</label>
+             <input type="text" formControlName="dealerEmail" class="form-control form-control-lg" />
+             
+           </div>
+
+              <div class="form-outline mb-4">
+                  <label class="form-label" for="form3Example4cg">Mobile Number</label>
+                <input type="number" formControlName="dealerMobileNumber" class="form-control form-control-lg" />
+                
+              </div>
+             <button type="button" class="btn btn-primary" (click)="next()">Next</button>
+         </div>
+           
+
+           <div *ngIf="currentStep===2">
+            <div formGroupName="dealerAddress">
+
+              <div class="form-outline mb-4">
+                <label class="form-label" for="form3Example1cg">Area</label>
+             <input type="text" formControlName="areaName" class="form-control form-control-lg" />
+             
+           </div>
+           <div class="form-outline mb-4">
+            <label class="form-label" for="form3Example1cg">City</label>
+         <input type="text" formControlName="cityName" class="form-control form-control-lg" />
+         
+       </div>
+       <div class="form-outline mb-4">
+        <label class="form-label" for="form3Example1cg">District</label>
+     <input type="text" formControlName="districtName" class="form-control form-control-lg" />
+     
+   </div>
+   <div class="form-outline mb-4">
+    <label class="form-label" for="form3Example1cg">landMark</label>
+ <input type="text" formControlName="landMark" class="form-control form-control-lg" />
+ 
+</div>
+<div class="form-outline mb-4">
+    <label class="form-label" for="form3Example1cg">State</label>
+ <input type="text" formControlName="stateName" class="form-control form-control-lg" />
+ 
+</div>
+<div class="form-outline mb-4">
+    <label class="form-label" for="form3Example1cg">pinCode</label>
+ <input type="text" formControlName="pinCodeNumber" class="form-control form-control-lg" />
+ </div>
+</div>
+<button type="button" class="btn btn-primary" (click)="previous()" >Previous</button>
+        <button type="button" class="btn btn-primary" (click)="next()">Next</button>
+</div>
+
+
+<div *ngIf="currentStep===3">
+
+
+<div formGroupName="dealerBankDetails">
+    <!-- <div class="form-outline mb-4">
+        <label class="form-label" for="form3Example1cg">bankAccountNumber</label>
+     <input type="text" formControlName="bankAccountNumber" class="form-control form-control-lg" />
+     
+   </div> -->
+   <div class="form-outline mb-4">
+    <label class="form-label" for="form3Example1cg">Bank Name</label>
+ <input type="text" formControlName="bankName" class="form-control form-control-lg" />
+ 
+</div>
+<div class="form-outline mb-4">
+    <label class="form-label" for="form3Example1cg">Branch Name</label>
+ <input type="text" formControlName="branchName" class="form-control form-control-lg" />
+ 
+</div>
+<div class="form-outline mb-4">
+    <label class="form-label" for="form3Example1cg">IFSC Number</label>
+ <input type="text" formControlName="ifscNumber" class="form-control form-control-lg" />
+ 
+</div>
+<div class="form-outline mb-4">
+    <label class="form-label" for="form3Example1cg">CARD Number</label>
+ <input type="number" formControlName="cardNumber" class="form-control form-control-lg" />
+ </div>
+ 
+ <button type="button" class="btn btn-primary" (click)="previous()">Previous</button>
+        
+        <button type="submit" class="btn btn-success" >Register</button>
+        </div>
+      </div>
+
+        </form>
+      
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+
+
+        
+        </section> 

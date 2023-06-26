@@ -8,10 +8,11 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { CustomerViewpageComponent } from './modules/customer/customer-viewpage/customer-viewpage.component';
 
 const routes: Routes = [
   {
-    path:'',component:HomeComponent,pathMatch:'full'
+    path:'',component:CustomerViewpageComponent,pathMatch:'full'
   },
   {
     path:'home',component:HomeComponent

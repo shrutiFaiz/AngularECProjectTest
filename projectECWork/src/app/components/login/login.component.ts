@@ -50,18 +50,19 @@ console.log(this.loginForm.value);
 
     this.ls.getuserbyusernameandpassword(this.loginForm.controls['username'].value, this.loginForm.controls['password'].value).subscribe(
       (data:User)=>{
-      if(data!=null){
+      if(data!=null)
+      {
   
-     if(data.userType=="admin")
-       {
-         sessionStorage.setItem('usertype',data.userType);
-           this.r.navigateByUrl("/dash");
-       }
-     else if(data.userType=="inventory")
-     {
-      sessionStorage.setItem('usertype',data.userType);
-      this.r.navigateByUrl("/dash");
-     }
+            if(data.userType=="admin")
+              {
+                sessionStorage.setItem('usertype',data.userType);
+                  this.r.navigateByUrl("/dash");
+              }
+            else if(data.userType=="inventory")
+            {
+              sessionStorage.setItem('usertype',data.userType);
+              this.r.navigateByUrl("/dash");
+            }
       
       }
       else

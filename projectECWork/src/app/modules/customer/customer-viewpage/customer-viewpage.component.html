@@ -1,0 +1,24 @@
+
+
+<p>Customer View Page</p>
+
+<div><input type="text" [(ngModel)]="search">&nbsp;&nbsp;&nbsp;
+    <button type="submit" (click)="searchProductByCategory()" class="btn btn-primary mb-2">Search</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <button type="submit" (click)="reset()" class="btn btn-primary mb-2">Reset</button>
+ </div>
+        <div class="horizontal-container">
+        <div *ngFor="let product of pList">
+            <div>
+            {{product.productName}}<br>
+            
+ <img [src]="'data:image/jpeg;base64,'+product.photo" height="50"><br>
+ &nbsp;<a href="showDetails" routerLink="showdetails" [state]="product">ShowDetails</a>&nbsp;&nbsp;&nbsp;
+           </div>
+        </div>
+        </div>
+            <router-outlet></router-outlet>
+       
+       
+  
+
+

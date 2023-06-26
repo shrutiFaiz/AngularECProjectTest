@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { InventoryRoutingModule } from './inventory-routing.module';
 import { AddProductComponent } from './add-product/add-product.component';
 import { ViewAllProductComponent } from './view-all-product/view-all-product.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -13,7 +14,8 @@ import { ViewAllProductComponent } from './view-all-product/view-all-product.com
   ],
   imports: [
     CommonModule,
-    InventoryRoutingModule
+    InventoryRoutingModule,
+    ReactiveFormsModule
   ]
 })
 export class InventoryModule { }

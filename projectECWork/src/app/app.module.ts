@@ -13,9 +13,10 @@ import { RegisterComponent } from './components/register/register.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { HeaderComponent } from './template/header/header.component';
 import { SidemenuComponent } from './template/sidemenu/sidemenu.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
+import { CustomerModule } from './modules/customer/customer.module';
 
 @NgModule({
   declarations: [
@@ -35,8 +36,10 @@ import { RouterModule } from '@angular/router';
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
+    FormsModule,
    HttpClientModule,
-   RouterModule
+   RouterModule,
+   CustomerModule
   ],
   providers: [],
   bootstrap: [AppComponent]

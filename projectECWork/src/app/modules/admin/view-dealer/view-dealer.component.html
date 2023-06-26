@@ -1,1 +1,39 @@
-<p>view-dealer works!</p>
+<table style="width:200%" border="3" >
+    <thead>
+      <tr>
+        <th>Dealer ID</th>
+       <th>Dealer Name</th>
+        <th>Dealer Email</th>
+        <th>Dealer Mobile</th>
+        <th>Area</th>
+        <th>City</th>
+        <th>State</th>
+        <th>Pin-Code</th>
+        <th>Bank Ac</th>
+        <th>Bank Name</th>
+        <!-- <th>branchName</th> -->
+        <th>ifsc_NO</th>
+        <th>Card_NO</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let d of pList">
+        <td>{{ d.dealerId }}</td>
+        <td>{{ d.dealerName }}</td>
+        <td>{{ d.dealerEmail }}</td>
+        <td>{{ d.dealerMobileNumber }}</td>
+        <td>{{ d.dealerAddress.areaName }}</td>
+        <td>{{ d.dealerAddress.cityName }}</td>
+        <!-- <td>{{ d.dealerAddress.districtName }}</td> -->
+        <td>{{ d.dealerAddress.stateName }}</td>
+        <td>{{ d.dealerAddress.pinCodeNumber }}</td>
+        <td>{{ d.dealerBankDetails.bankAccountNumber }}</td>
+        <td>{{ d.dealerBankDetails.bankName }}</td>
+        <!-- <td>{{ d.dealerBankDetails.branchName }}</td> -->
+       <td>{{ d.dealerBankDetails.ifscNumber }}</td> 
+        <td>{{ d.dealerBankDetails.cardNumber}}</td>
+        
+      </tr>
+    </tbody>
+  </table>
+ {{pList | json}}
